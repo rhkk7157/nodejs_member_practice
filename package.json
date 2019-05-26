@@ -1,0 +1,20 @@
+{
+  "name": "node_2",
+  "version": "1.0.0",
+  "description": "쇼핑몰 과제",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e js,html app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "hyeri",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "nunjucks": "^3.2.0",
+    "sequelize": "^4.42.0"
+  }
+}

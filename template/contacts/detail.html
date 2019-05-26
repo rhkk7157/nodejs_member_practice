@@ -1,0 +1,42 @@
+{% set title = "관리자 : 상세페이지" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            아이디 : {{ member.id }}
+        </div>
+        <div class="panel-body">
+            <div style="padding-bottom: 10px">
+                {{ member.createdAt}}
+            </div>
+
+            이름 : {{ member. name }}
+
+            <hr />
+            <ul>
+                {% for memo in member.Memo %}
+                <li>
+                    {{ memo.content }}
+                    (
+                        <a href="/contacts/delete/{{ member.idx }}/{{ memo.id }}" 
+                            onclick="return confirm('삭제하시겠습니까?')">
+                            삭제
+                        </a>
+                    )
+                </li>
+                {% endfor %}
+            </ul>
+            메모작성하기
+            <form action="" method="post">
+                <textarea class="form-control" name="content" required></textarea>
+                <button class="btn btn-primary" style="margin-top: 10px">메모작성</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="/contacts/list" class="btn btn-default">목록으로</a>
+    <a href="/contacts/list/edit/{{ member.idx }}" class="btn btn-primary">수정</a>
+
+
+{% endblock %}

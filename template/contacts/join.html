@@ -1,0 +1,23 @@
+{% set title = "제품 등록" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>I D</th>
+                <td><input type="text" name="id" class="form-control" value="{{ member.id }}"/></td>
+            </tr>
+            <tr>
+                <th>P W D</th>
+                <td><input type="text" name="pwd" class="form-control" value="{{ member.pwd }}"/></td>
+            </tr>
+            <tr>
+                <th>N A M E</th>
+                <td><input type="text" name="name" class="form-control" value="{{ member.name }}"/></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary">확인</button>
+    </form>
+
+{% endblock %}
